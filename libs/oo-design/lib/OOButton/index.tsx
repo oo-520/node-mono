@@ -1,7 +1,9 @@
-import { ReactNode } from 'react'
-export interface OOButtonProps {
-    children: ReactNode
+import { PropsWithChildren } from 'react'
+export interface OOButtonProps extends PropsWithChildren {
+    onClick: () => void
 }
 export function OOButton(props: OOButtonProps) {
-    return <button>{props.children}</button>
+    return <button
+    onClick={props.onClick}
+    >{props.children}</button>
 }
